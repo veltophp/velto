@@ -1,0 +1,27 @@
+{
+    "name": "veltophp/velto",
+    "description": "Velto - The lightweight PHP framework with RVC architecture — perfect for modern static web projects",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "veltophp",
+        "email": "dev@veltophp.com"
+      }
+    ],
+    "require": {
+      "php": ">=8.0",
+      "veltophp/velto-core": "^1.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "App\\": "app/"
+      }
+    },
+    "scripts": {
+      "start": "php velto start"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+  }
+  

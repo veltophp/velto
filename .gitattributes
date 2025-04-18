@@ -1,0 +1,3 @@
+*.php linguist-language=PHP
+*.hack linguist-language=PHP
+* linguist-detectable=true

@@ -1,0 +1,39 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+require __DIR__ . 'core';
+
+
+$command = $argv[1] ?? null;
+$subcommand = $argv[2] ?? null;
+
+if (str_contains($command, 'make:')) {
+    [, $sub] = explode(':', $command);
+    $file = __DIR__ . "/velto-cli/commands/make/" . strtolower($sub) . ".php";
+}
+elseif (str_contains($command, ':')) {
+    [$main, $sub] = explode(':', $command);
+    $file = __DIR__ . "/velto-cli/commands/{$main}/{$main}" . ucfirst($sub) . ".php";
+}
+elseif ($command === 'make' && $subcommand) {
+    $file = __DIR__ . '/velto-cli/commands/make/' . strtolower($subcommand) . '.php';
+}
+elseif ($command) {
+    $file = __DIR__ . '/velto-cli/commands/' . strtolower($command) . '.php';
+} else {
+    $file = __DIR__ . '/velto-cli/commands/help.php';
+}
+
+if (file_exists($file)) {
+    require $file;
+} else {
+    echo "\n";
+    echo "❌ Unknown command: $command\n";
+    echo "\n";
+
+    require __DIR__ . '/velto-cli/commands/help.php';
+}
+
+exit(0);
