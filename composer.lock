@@ -1,0 +1,64 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "02b22b77a570b8761d50dde8881795c9",
+    "packages": [
+        {
+            "name": "veltophp/velto-core",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/veltophp/velto-core.git",
+                "reference": "ab375f141098c1271478fa01661c003965bb0a52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/veltophp/velto-core/zipball/ab375f141098c1271478fa01661c003965bb0a52",
+                "reference": "ab375f141098c1271478fa01661c003965bb0a52",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "core/Helpers.php"
+                ],
+                "psr-4": {
+                    "Velto\\Core\\": "core/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "veltophp",
+                    "email": "dev@veltophp.com"
+                }
+            ],
+            "description": "Core framework logic for Velto PHP framework.",
+            "support": {
+                "issues": "https://github.com/veltophp/velto-core/issues",
+                "source": "https://github.com/veltophp/velto-core/tree/v1.0.0"
+            },
+            "time": "2025-04-18T04:44:36+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.0"
+    },
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}

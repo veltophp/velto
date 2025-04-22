@@ -1,15 +1,15 @@
-@extends('layouts.app')
+<?php \Velto\Core\View::setLayout('layouts.app'); ?>
 
-@section('title')
+<?php \Velto\Core\View::startSection('title'); ?>
     Velto | This is example page from Velto.
-@endsection
+<?php \Velto\Core\View::endSection(); ?>
 
-@section('content')
+<?php \Velto\Core\View::startSection('content'); ?>
 
     <section id="examples" class="py-24 bg-gray-50 dark:bg-dark-900 mt-12">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8 text-center">
-                {{ $title }}
+                <?= htmlspecialchars($title, ENT_QUOTES, "UTF-8") ?>
             </h2>
 
             <div class="grid md:grid-cols-1">
@@ -26,4 +26,4 @@
     </section>
 
 
-@endsection
+<?php \Velto\Core\View::endSection(); ?>

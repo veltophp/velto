@@ -1,10 +1,10 @@
-@extends('layouts.app')
+<?php \Velto\Core\View::setLayout('layouts.app'); ?>
 
-@section('title')
+<?php \Velto\Core\View::startSection('title'); ?>
     Velto | A super lightweight PHP Framework with RVC pattern.
-@endsection
+<?php \Velto\Core\View::endSection(); ?>
 
-@section('content')
+<?php \Velto\Core\View::startSection('content'); ?>
 
     <!-- Animated Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center px-6 pt-36 md:pt-16 overflow-hidden">
@@ -25,7 +25,7 @@
             
             <h1 class="text-5xl sm:text-7xl font-extrabold mb-6 bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
                 <!-- this varibale come from HomeController -->
-                {{ $title }}
+                <?= htmlspecialchars($title, ENT_QUOTES, "UTF-8") ?>
             </h1>
             
             <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -335,4 +335,4 @@
         </div>
     </section>
 
-@endsection
+<?php \Velto\Core\View::endSection(); ?>

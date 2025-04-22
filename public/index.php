@@ -1,20 +1,27 @@
 <?php
 
-// 1. Composer autoload (wajib, untuk load velto-core)
 require __DIR__ . '/../vendor/autoload.php';
 
-// 2. Load core aliases, helpers, dsb. (disatukan dalam core.php)
-require __DIR__ . '/../core.php';
+use Velto\Core\App;
+use Velto\Core\View;
+use Velto\Core\Env;
 
-// 3. Load env
-\Velto\Core\Env::load();
+// Load env dulu
+Env::load(__DIR__ . '/../.env');
 
-// 4. Define waktu mulai
+// dd('APP_DEBUG:', Env::get('APP_DEBUG'), Env::isDebug());
+
+
+View::configure(
+    __DIR__ . '/../views',
+    __DIR__ . '/../storage/cache/views'
+);
+
 define('VELTO_START', microtime(true));
+define('BASE_PATH', dirname(__DIR__));
 
-// 5. Load routes
 require __DIR__ . '/../routes/web.php';
 
-// 6. Exception handler dan jalankan app
-set_exception_handler([\Velto\Core\App::class, 'handleException']);
-\Velto\Core\App::run();
+set_exception_handler([App::class, 'handleException']);
+
+App::run();

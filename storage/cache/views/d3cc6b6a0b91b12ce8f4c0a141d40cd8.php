@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Velto | A super lightweight PHP Framework with RVC pattern.')</title>
+    <title><?php echo \Velto\Core\View::yieldSection('title', 'Velto | A super lightweight PHP Framework with RVC pattern.' ?? ''); ?></title>
     <meta name="description" content="Ultra-lightweight PHP framework for static and simple web applications. No database, no dependencies - just pure simplicity.">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    @css_link
+    <?= css_link() ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="/assets/js/dark-thema.js" defer></script>
     <!-- watch auto reload -->
@@ -47,12 +47,12 @@
     </script>
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-white text-gray-800 font-sans antialiased dark:bg-gradient-to-br dark:from-dark-900 dark:to-dark-800 dark:text-gray-200 transition-colors duration-300">
-    @include('components.dark-button')
+    <?php \Velto\Core\View::include('components.dark-button'); ?>
     <!-- Header/Navigation -->
-    @include('components.header')
+    <?php \Velto\Core\View::include('components.header'); ?>
     <!-- main content -->
-    @yield('content')
+    <?php echo \Velto\Core\View::yieldSection('content', '' ?? ''); ?>
     <!-- Footer -->
-    @include('components.footer')
+    <?php \Velto\Core\View::include('components.footer'); ?>
 </body>
 </html>

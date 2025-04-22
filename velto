@@ -1,39 +1,53 @@
 #!/usr/bin/env php
 <?php
 
+// require __DIR__ . '/core/Helpers.php';
 require __DIR__ . '/vendor/autoload.php';
-
-require __DIR__ . 'core';
-
 
 $command = $argv[1] ?? null;
 $subcommand = $argv[2] ?? null;
 
+if (!defined('BASE_PATH')) {
+    define('BASE_PATH', realpath(__DIR__));
+}
+
+$basePath = __DIR__ . '/velto-cli/commands/';
+$corePath = __DIR__ . '/vendor/veltophp/velto-core/velto-cli/commands/';
+
 if (str_contains($command, 'make:')) {
     [, $sub] = explode(':', $command);
-    $file = __DIR__ . "/velto-cli/commands/make/" . strtolower($sub) . ".php";
+    $file = $basePath . 'make/' . strtolower($sub) . '.php';
+    $fallback = $corePath . 'make/' . strtolower($sub) . '.php';
 }
 elseif (str_contains($command, ':')) {
     [$main, $sub] = explode(':', $command);
-    $file = __DIR__ . "/velto-cli/commands/{$main}/{$main}" . ucfirst($sub) . ".php";
+    $file = $basePath . "{$main}/{$main}" . ucfirst($sub) . ".php";
+    $fallback = $corePath . "{$main}/{$main}" . ucfirst($sub) . ".php";
 }
 elseif ($command === 'make' && $subcommand) {
-    $file = __DIR__ . '/velto-cli/commands/make/' . strtolower($subcommand) . '.php';
+    $file = $basePath . 'make/' . strtolower($subcommand) . '.php';
+    $fallback = $corePath . 'make/' . strtolower($subcommand) . '.php';
 }
 elseif ($command) {
-    $file = __DIR__ . '/velto-cli/commands/' . strtolower($command) . '.php';
+    $file = $basePath . strtolower($command) . '.php';
+    $fallback = $corePath . strtolower($command) . '.php';
 } else {
-    $file = __DIR__ . '/velto-cli/commands/help.php';
+    $file = $basePath . 'help.php';
+    $fallback = $corePath . 'help.php';
 }
 
 if (file_exists($file)) {
     require $file;
+} elseif (file_exists($fallback)) {
+    require $fallback;
 } else {
     echo "\n";
     echo "❌ Unknown command: $command\n";
     echo "\n";
 
-    require __DIR__ . '/velto-cli/commands/help.php';
+    if (file_exists($corePath . 'help.php')) {
+        require $corePath . 'help.php';
+    }
 }
 
 exit(0);
