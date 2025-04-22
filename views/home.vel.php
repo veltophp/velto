@@ -280,6 +280,9 @@
 # Navigate to project
 <span class="text-green-400">cd</span> my-project
 
+# Run update
+<span class="text-green-400">composer</span> update
+
 # Start development server
 <span class="text-green-400">php</span> velto start
                         </code>

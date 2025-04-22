@@ -1,0 +1,22 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+
+# Logs & cache
+storage/logs/
+storage/cache/
+*.log
+
+# IDE/editor settings
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# composer.lock
+
+# MacOS and Linux trash
+.Trashes
