@@ -14,6 +14,11 @@ class PagesController extends Controller
     
         return view('pages.example-page');
     }    
+
+    public function contact() {
+
+        return view('pages.contact');
+    }
     
     public function contact_send()
     {
