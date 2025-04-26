@@ -1,8 +1,8 @@
 # VeltoPHP Framework
 
-**velto** | A super lightweight PHP Framework using the RVC pattern
+**velto** | VeltoPHP Framework | Fast & Minimalist RVC-Powered Web Development
 
-Ultra-lightweight PHP framework for static and simple web applications. No database, no dependencies – just pure simplicity.
+Velto is a lightweight PHP framework built with the RVC (Route-View-Controller) pattern. Ideal for building fast, static, and simple web applications — no database required.
 
 ---
 
