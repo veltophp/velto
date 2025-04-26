@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Velto | A super lightweight PHP Framework with RVC pattern.
+    Velto PHP Framework | Fast & Minimalist RVC-Powered Web Development
 @endsection
 
 @section('content')

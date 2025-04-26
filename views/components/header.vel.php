@@ -11,7 +11,7 @@
 
     <nav class="hidden md:flex space-x-8">
       <a href="/" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Home</a>
-      <a href="/docs/home" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Documentation</a>
+      <a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Documentation</a>
       <a href="/contact" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Contact</a>
       <a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">About</a>
       <a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Examples</a>
