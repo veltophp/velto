@@ -7,13 +7,7 @@ use Velto\Core\Mail;
 
 
 class PagesController extends Controller
-{
-
-    public function example() {
-    
-    
-        return view('pages.example-page');
-    }    
+{ 
 
     public function contact() {
 
