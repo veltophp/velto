@@ -11,10 +11,10 @@
 
     <nav class="hidden md:flex space-x-8">
       <a href="/" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Home</a>
-      <a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Documentation</a>
+      <!-- <a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Documentation</a> -->
       <a href="/contact" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Contact</a>
-      <a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">About</a>
-      <a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Examples</a>
+      <!-- <a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">About</a> -->
+      <!-- <a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition">Examples</a> -->
     </nav>
 
     <a href="https://github.com/veltophp/velto" target="_blank" class="hidden md:block px-4 py-2 bg-black text-white text-sm font-medium rounded-md shadow hover:bg-gray-900 dark:bg-blue-600 dark:hover:bg-blue-700 transition">

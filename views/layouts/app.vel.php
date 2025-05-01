@@ -6,7 +6,7 @@
     <title>@yield('title', 'VeltoPHP Framework | Fast & Minimalist RVC-Powered Web Development.')</title>
     <link rel="icon" href="https://res.cloudinary.com/dmnble1qr/image/upload/v1744859332/velto_zfond5.png" type="image/png">
     <meta name="description" content="Velto is a lightweight PHP framework built with the RVC (Route-View-Controller) pattern. Ideal for building fast, static, and simple web applications — no database required.">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- change CSS on .env -->
     @css_link
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="/assets/js/dark-thema.js" defer></script>
@@ -50,7 +50,7 @@
 <body class="bg-gradient-to-br from-gray-50 to-white text-gray-800 font-sans antialiased dark:bg-gradient-to-br dark:from-dark-900 dark:to-dark-800 dark:text-gray-200 transition-colors duration-300">
     @include('components.dark-button')
     <!-- Header/Navigation -->
-    @include('components.header')
+    @include('components.navbar')
     <!-- main content -->
     @yield('content')
     <!-- Footer -->
