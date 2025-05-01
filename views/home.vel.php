@@ -48,11 +48,11 @@
             <div class="mt-16 p-6 bg-white dark:bg-dark-800/50 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-dark-700 shadow-sm max-w-2xl mx-auto">
                 <div class="flex flex-wrap justify-center gap-6 text-center">
                     <div class="px-4">
-                        <div class="text-3xl font-bold text-red-500 dark:text-red-400"> >1Mb </div>
-                        <div class="text-gray-500 dark:text-gray-400 text-sm">Minified</div>
+                        <div class="text-3xl font-bold text-green-500 dark:text-green-400">&lt;1Mb</div>
+                        <div class="text-gray-500 dark:text-gray-400 text-sm">Lightweight</div>
                     </div>
                     <div class="px-4">
-                        <div class="text-3xl font-bold text-purple-500 dark:text-purple-400"> >10ms</div>
+                        <div class="text-3xl font-bold text-purple-500 dark:text-purple-400">&lt;10ms</div>
                         <div class="text-gray-500 dark:text-gray-400 text-sm">Overhead</div>
                     </div>
                     <div class="px-4">
