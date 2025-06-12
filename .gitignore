@@ -3,13 +3,10 @@
 Thumbs.db
 .Trashes
 
-# Environment
-.env
-
 # Logs & cache
-storage/logs/
-storage/cache/
-storage/sessions/
+storage/logs/*
+storage/cache/*
+storage/sessions/*
 *.log
 
 # Ignore SQLite database
@@ -26,6 +23,3 @@ database.sqlite
 .vscode/
 *.sublime-workspace
 *.sublime-project
-
-# Composer lock (keep it if this is an app)
-# composer.lock

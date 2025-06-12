@@ -46,19 +46,21 @@ if (class_exists('Velto\\Axion\\Axion')) {
         $middleware = new \Velto\Axion\Middleware\VerifyCsrfToken();
 
         $middleware->handle($request, function ($request) {
+            $routePath = BASE_PATH . '/axion/routes/web.php';
 
-            require BASE_PATH . '/axion/routes/web.php';
+            if (file_exists($routePath)) {
+                require $routePath;
+            } else {
+                require BASE_PATH . '/routes/web.php';
+            }
         });
 
     } catch (\Throwable $e) {
-
         velto_log("Error loading or using Axion middleware: " . $e->getMessage());
-
         require BASE_PATH . '/routes/web.php';
     }
 
 } else {
-
     require BASE_PATH . '/routes/web.php';
 }
 
