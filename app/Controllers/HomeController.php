@@ -1,8 +1,13 @@
 <?php
 
+/**
+ * Class HomeController in namespace App\Controllers.
+ */
+
 namespace App\Controllers;
 
 use Velto\Core\Controller;
+
 
 class HomeController extends Controller {
     public function index() {

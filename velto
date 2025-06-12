@@ -1,53 +1,19 @@
 #!/usr/bin/env php
 <?php
 
-// require __DIR__ . '/core/Helpers.php';
+define('BASE_PATH', __DIR__); 
 require __DIR__ . '/vendor/autoload.php';
 
-$command = $argv[1] ?? null;
-$subcommand = $argv[2] ?? null;
+use Veltophp\VeltoCli\Console;
+use Veltophp\VeltoCli\Velto;
 
-if (!defined('BASE_PATH')) {
-    define('BASE_PATH', realpath(__DIR__));
+
+if (!class_exists(Console::class)) {
+
+    fwrite(STDERR, "Error: Class Veltophp\\VeltoCli\\Application not found.\n");
+    exit(1);
 }
 
-$basePath = __DIR__ . '/velto-cli/commands/';
-$corePath = __DIR__ . '/vendor/veltophp/velto-core/velto-cli/commands/';
+$app = new Velto();
 
-if (str_contains($command, 'make:')) {
-    [, $sub] = explode(':', $command);
-    $file = $basePath . 'make/' . strtolower($sub) . '.php';
-    $fallback = $corePath . 'make/' . strtolower($sub) . '.php';
-}
-elseif (str_contains($command, ':')) {
-    [$main, $sub] = explode(':', $command);
-    $file = $basePath . "{$main}/{$main}" . ucfirst($sub) . ".php";
-    $fallback = $corePath . "{$main}/{$main}" . ucfirst($sub) . ".php";
-}
-elseif ($command === 'make' && $subcommand) {
-    $file = $basePath . 'make/' . strtolower($subcommand) . '.php';
-    $fallback = $corePath . 'make/' . strtolower($subcommand) . '.php';
-}
-elseif ($command) {
-    $file = $basePath . strtolower($command) . '.php';
-    $fallback = $corePath . strtolower($command) . '.php';
-} else {
-    $file = $basePath . 'help.php';
-    $fallback = $corePath . 'help.php';
-}
-
-if (file_exists($file)) {
-    require $file;
-} elseif (file_exists($fallback)) {
-    require $fallback;
-} else {
-    echo "\n";
-    echo "❌ Unknown command: $command\n";
-    echo "\n";
-
-    if (file_exists($corePath . 'help.php')) {
-        require $corePath . 'help.php';
-    }
-}
-
-exit(0);
+$app->run();

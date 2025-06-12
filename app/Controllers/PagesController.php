@@ -14,27 +14,45 @@ class PagesController extends Controller
         return view('pages.contact');
     }
     
-    public function contact_send()
+    public function contactSend()
     {
+
+        $request = request()->all();
+
+        $errors = validate($request, [
+            'name' => 'required|string|min:3',
+            'email' => 'required|email',
+            'message' => 'required|string|max:160',
+        ]);
+    
+        if (!empty($errors)) {
+            flash()->error($errors);
+            return to_route('contact');
+        }
+
         $data = [
-            'name' => request()->input('name'),
-            'email' => request()->input('email'),
-            'message' => request()->input('message'),
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'message' => $request['message'],
         ];
 
-        $to = ''; //give the email receiver
-        $subject = 'New Contact Form Submission'; //change the subject as you wish
-        $template = 'contact-mail'; //template from views/mails
+        $to = 'danayasa2@gmail.com'; 
+        $subject = 'New Contact Form Submission'; 
+        $template = 'contact-mail';
 
         $send = Mail::send($to, $subject, $template, $data);
 
         if ($send) {
-                return redirect('/contact?status=success'); 
+
+            flash()->success('Your message has been sent successfully. We will get back to you soon!');
+            return to_route('contact');
 
             } else {
-            
-                return redirect('/contact?status=fail'); 
+
+            flash()->error('Something went wrong. Please try again or contact us directly.');
+            return to_route('contact');
         }
 
     }
+
 }

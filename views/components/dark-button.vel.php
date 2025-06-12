@@ -1,4 +1,4 @@
-<button id="theme-toggle" type="button" class="fixed right-6 top-5 z-50 p-2 rounded-full bg-white/80 dark:bg-dark-700/80 backdrop-blur shadow-md hover:bg-gray-100 dark:hover:bg-dark-600 transition-all">
+<button id="theme-toggle" type="button" class="fixed right-6 bottom-5 z-50 p-2 rounded-full bg-white/80 dark:bg-dark-700/80 backdrop-blur shadow-md hover:bg-gray-100 dark:hover:bg-dark-600 transition-all">
     <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
     </svg>
