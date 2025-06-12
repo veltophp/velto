@@ -11,8 +11,9 @@
   ],
   "require": {
     "php": ">=8.0",
-    "veltophp/velto-core": "^1.0.5",
-    "veltophp/axion": "dev-main",
+    "veltophp/velto-core": "^1.1.0",
+    "veltophp/axion": "^1.1.0",
+    "veltophp/velto-cli": "^1.1.0",
     "league/commonmark": "^2.7"
   },
   "autoload": {
@@ -29,16 +30,6 @@
   "scripts": {
     "start": "php velto start"
   },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "vendor/veltophp/axion"
-    },
-    {
-      "type": "path",
-      "url": "vendor/veltophp/velto-cli"
-    }
-  ],
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true
 }
