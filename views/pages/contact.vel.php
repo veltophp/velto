@@ -65,7 +65,7 @@
             </div>
 
             <!-- Right Column - Contact Form -->
-            <div class="bg-white dark:bg-dark-800 w-full">
+            <div class="w-full">
                 <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send us a message</h2>
                 <div>@flash_errors</div>
                 <form action="{{ route('contact.send') }}" method="POST" class="space-y-6">

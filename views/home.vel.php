@@ -18,7 +18,7 @@
                 <a href="#" class="px-6 py-3 rounded-full text-white bg-gradient-to-r from-red-500 to-purple-600 font-medium hover:scale-105 transition-transform shadow-md">
                     Documentation
                 </a>
-                <a href="#" target="_blank" class="px-6 py-3 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">
+                <a href="https://github.com/veltophp" target="_blank" class="px-6 py-3 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">
                     <i class="fab fa-github mr-2"></i> View on GitHub
                 </a>
             </div>
