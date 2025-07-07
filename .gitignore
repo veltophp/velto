@@ -1,0 +1,32 @@
+# System files
+.DS_Store
+Thumbs.db
+.Trashes
+
+# Environment
+.env
+
+# Logs & cache
+storage/log/
+storage/sessions/
+resources/cache/views/
+*.log
+
+# SQLite 
+database.sqlite
+
+# Composer vendor
+/vendor/
+/composer.phar
+
+# Preserve empty dirs 
+!storage/
+!storage/log/
+!storage/sessions/
+!resources/cache/views/
+
+# IDE/editor settings
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project

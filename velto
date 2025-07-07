@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+define('BASE_PATH', __DIR__); 
+require __DIR__ . '/vendor/autoload.php';
+
+use Veltophp\VeltoCli\Console;
+use Veltophp\VeltoCli\Velto;
+
+
+if (!class_exists(Console::class)) {
+
+    fwrite(STDERR, "Error: Class Veltophp\\VeltoCli\\Application not found.\n");
+    exit(1);
+}
+
+$app = new Velto();
+
+$app->run();

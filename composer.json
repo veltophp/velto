@@ -1,0 +1,41 @@
+  {
+    "name": "veltophp/velto",
+    "description": "VeltoPHP 2.0 Application - A lightweight modular PHP framework for modern development.",
+    "type": "project",
+    "license": "MIT",
+    "homepage": "https://veltophp.com",
+    "support": {
+      "email": "dev@veltophp.com",
+      "source": "https://github.com/veltophp/velto",
+      "docs": "https://veltophp.com/docs",
+      "forum": "https://instagram.com/veltophp"
+    },
+    "authors": [
+      {
+        "name": "KetutDana",
+        "email": "dev@veltophp.com",
+        "homepage": "https://veltophp.com",
+        "role": "Developer"
+      }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Modules\\": "modules/",
+        "Velto\\App\\Middleware\\": "app/middleware/"
+      }
+    },
+    "require": {
+      "php": "^8.3",
+      "veltophp/velto-core": "^2.0",
+      "veltophp/velto-cli": "^2.0",
+      "symfony/http-foundation": "^7.3"
+    },
+    "scripts": {
+      "post-install-cmd": [
+        "@php vendor/bin/velto"
+      ]
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+  }
+  
