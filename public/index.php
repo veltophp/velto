@@ -4,7 +4,8 @@ define('VELTO_START', microtime(true));
 
 
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../velto-core/src/helper/LoadHelpers.php';
+require_once __DIR__ . '/../vendor/veltophp/velto-core/src/helper/LoadHelpers.php';
+
 
 use Velto\Core\View\View;
 use Velto\Core\Env\Env;
