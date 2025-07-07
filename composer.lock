@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5981244a53cb59b5760a2440572f160",
+    "content-hash": "b64f3dfa018d3a52c1eb381e03ece582",
     "packages": [
         {
             "name": "symfony/deprecation-contracts",
@@ -310,15 +310,21 @@
             "time": "2024-09-09T11:45:10+00:00"
         },
         {
-            "name": "velto/cli",
-            "version": "dev-main",
+            "name": "veltophp/velto-cli",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/veltophp/velto-cli.git",
+                "reference": "0325397b10aa17f0490f8d171add911cb60c7399"
+            },
             "dist": {
-                "type": "path",
-                "url": "../velto-cli",
-                "reference": "ba9fc2cceecbf308b276cba6deb14b7a67c33e24"
+                "type": "zip",
+                "url": "https://api.github.com/repos/veltophp/velto-cli/zipball/0325397b10aa17f0490f8d171add911cb60c7399",
+                "reference": "0325397b10aa17f0490f8d171add911cb60c7399",
+                "shasum": ""
             },
             "require": {
-                "php": ">=8.3"
+                "php": "^8.3"
             },
             "bin": [
                 "bin/velto"
@@ -329,48 +335,56 @@
                     "Veltophp\\VeltoCli\\": "src/"
                 }
             },
-            "transport-options": {
-                "relative": true
-            }
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "VeltoPHP CLI tool for development and code generation",
+            "support": {
+                "issues": "https://github.com/veltophp/velto-cli/issues",
+                "source": "https://github.com/veltophp/velto-cli/tree/v2.0.0"
+            },
+            "time": "2025-07-07T03:36:08+00:00"
         },
         {
-            "name": "velto/core",
-            "version": "dev-main",
+            "name": "veltophp/velto-core",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/veltophp/velto-core.git",
+                "reference": "aedac9c6adb8f298fb31a19eef1aa858894de84e"
+            },
             "dist": {
-                "type": "path",
-                "url": "../velto-core",
-                "reference": "3f942df646230aea8f02304d29a3ad83c77911c0"
+                "type": "zip",
+                "url": "https://api.github.com/repos/veltophp/velto-core/zipball/aedac9c6adb8f298fb31a19eef1aa858894de84e",
+                "reference": "aedac9c6adb8f298fb31a19eef1aa858894de84e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.3"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Velto\\Core\\": "src/",
-                    "Velto\\Core\\App\\": "src/app/",
-                    "Velto\\Core\\Env\\": "src/env/",
-                    "Velto\\Core\\Helper\\": "src/helper/",
-                    "Velto\\Core\\Model\\": "src/model/",
-                    "Velto\\Core\\Middleware\\": "src/middleware/",
-                    "Velto\\Core\\Migration\\": "src/migration/",
-                    "Velto\\Core\\Mail\\": "src/mail/",
-                    "Velto\\Core\\Route\\": "src/route/",
-                    "Velto\\Core\\Request\\": "src/request/",
-                    "Velto\\Core\\Session\\": "src/session/",
-                    "Velto\\Core\\View\\": "src/view/"
+                    "Velto\\Core\\": "src/"
                 }
             },
-            "description": "VeltoPHP Core Framework",
-            "transport-options": {
-                "relative": true
-            }
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The core of VeltoPHP Framework",
+            "support": {
+                "issues": "https://github.com/veltophp/velto-core/issues",
+                "source": "https://github.com/veltophp/velto-core/tree/v2.0.0"
+            },
+            "time": "2025-07-07T03:33:59+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "velto/cli": 20,
-        "velto/core": 20
-    },
+    "minimum-stability": "stable",
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
