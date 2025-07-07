@@ -31,10 +31,10 @@
       "symfony/http-foundation": "^7.3"
     },
     "scripts": {
-      "post-install-cmd": [
-        "@php vendor/bin/velto"
-      ]
-    },
+    "post-create-project-cmd": [
+      "@php vendor/veltophp/velto-core/scripts/first-installer.php"
+    ]
+  },
     "minimum-stability": "stable",
     "prefer-stable": true
   }
