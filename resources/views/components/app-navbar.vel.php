@@ -13,14 +13,16 @@
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#" class="text-gray-600 hover:text-red-500 transition-colors font-light">Documentation</a>
                 <a href="#" class="text-gray-600 hover:text-red-500 transition-colors font-light">Community</a>
-                @if(Auth::user())
-                    <a href="{{ route('axion.dashboard') }}" class="text-gray-600 hover:text-red-500 transition-colors font-light">
-                        Dashboard
-                    </a>
-                @else
-                    <a href="{{ route('axion.dashboard') }}" class="text-gray-600 hover:text-red-500 transition-colors font-light">
-                        Login | Register
-                    </a>
+                @if (env('AUTH_LOGIN'))
+                    @if(Auth::user())
+                        <a href="{{ route('axion.dashboard') }}" class="text-gray-600 hover:text-red-500 transition-colors font-light">
+                            Dashboard
+                        </a>
+                    @else
+                        <a href="{{ route('axion.dashboard') }}" class="text-gray-600 hover:text-red-500 transition-colors font-light">
+                            Login
+                        </a>
+                    @endif
                 @endif
             </div>
         </div>
