@@ -20,7 +20,7 @@ class CrudController extends Controller
 
         $dataCount = Axion::where('user_id', $user_id)->count();
 
-        return view('axion.crud-basic.crud')->compact($datas , $dataCount);
+        return view('Axion.crud-basic.crud')->compact($datas , $dataCount);
 
     }
 
@@ -64,7 +64,7 @@ class CrudController extends Controller
         $data = Axion::where('id', $id)
         ->andWhere('user_id', $user_id)->first();
 
-        return view('axion.crud-basic.crud-view')
+        return view('Axion.crud-basic.crud-view')
         ->with('data', $data);
 
     }
@@ -95,7 +95,7 @@ class CrudController extends Controller
 
         $dataCount = Axion::where('user_id', $user_id)->count();
 
-        return view('axion.crud-basic.crud-edit')->compact($data, $datas, $dataCount);
+        return view('Axion.crud-basic.crud-edit')->compact($data, $datas, $dataCount);
     }
 
     public function crudUpdate(Request $request, $id)
@@ -160,7 +160,7 @@ class CrudController extends Controller
 
         $dataCount = Axion::where('user_id', $user_id)->count();
 
-        return view('axion.crud-basic.crud')->compact($datas , $dataCount, $results);
+        return view('Axion.crud-basic.crud')->compact($datas , $dataCount, $results);
 
     }
 

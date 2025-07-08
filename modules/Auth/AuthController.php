@@ -17,7 +17,7 @@ class AuthController extends Controller
             return to_route('home');
         }    
 
-        return view('auth.login');
+        return view('Auth.login');
     }
 
     public function register()
@@ -26,7 +26,7 @@ class AuthController extends Controller
             return to_route('home');
         } 
         
-        return view('auth.register');
+        return view('Auth.register');
     }
 
     public function submitLogin(Request $request)
@@ -130,7 +130,7 @@ class AuthController extends Controller
             return to_route('login');
         }
 
-        return view('auth.verify-email')->with('email' , $email);
+        return view('Auth.verify-email')->with('email' , $email);
 
     }
 
@@ -189,7 +189,7 @@ class AuthController extends Controller
 
     public function forgotPasswordForm()
     {
-        return view('auth.forgot-password');
+        return view('Auth.forgot-password');
     }
 
     public function submitForgotPassword(Request $request)
@@ -240,7 +240,7 @@ class AuthController extends Controller
             return to_route('forgot.password');
         }
 
-        return view('auth.reset-password', [
+        return view('Auth.reset-password', [
             'token' => $token,
             'email' => $decodedEmail,
         ]);

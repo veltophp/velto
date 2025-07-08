@@ -15,20 +15,20 @@ class AxionController extends Controller
 {
     public function axionDashboard()
     {
-        return view('axion.axion-dashboard')->with('message', 'Welcome to Axion Dashboard.');
+        return view('Axion.axion-dashboard')->with('message', 'Welcome to Axion Dashboard.');
     }
 
     public function examplePage()
     {
         $message = 'Hello, this is Example page!';
         
-        return view('axion.axion-example-page')->compact($message);
+        return view('Axion.axion-example-page')->compact($message);
 
     }
 
     public function axionProfile()
     {
-        return view('axion.axion-profile');
+        return view('Axion.axion-profile');
     }
 
     public function updateName(Request $request)
@@ -140,7 +140,7 @@ class AxionController extends Controller
 
         $dataCount = Axion::where('user', $user)->count();
          
-        return view('axion.crud-basic.crud')->compact($datas , $dataCount);
+        return view('Axion.crud-basic.crud')->compact($datas , $dataCount);
 
     }
 
@@ -184,7 +184,7 @@ class AxionController extends Controller
 
         $data = Axion::where('id', $id)->andWhere('user', $user)->first();
 
-        return view('axion.axion-example-page-view')->with('data', $data);
+        return view('Axion.axion-example-page-view')->with('data', $data);
 
     }
 

@@ -15,7 +15,7 @@ if (!defined('CONFIG_PATH')) {
 }
 
 require_once BASE_PATH . '/vendor/autoload.php';
-require_once BASE_PATH . '/vendor/veltophp/velto-core/src/helper/LoadHelpers.php';
+require_once BASE_PATH . '/vendor/veltophp/velto-core/src/Helper/LoadHelpers.php';
 
 use Velto\Core\View\View;
 use Velto\Core\Env\Env;
