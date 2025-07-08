@@ -1,0 +1,4 @@
+{!! deleteAlert() !!}
+{!! successAlert() !!}
+{!! errorAlert() !!}
+{!! loadingIndicator() !!}
