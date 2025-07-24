@@ -1,4 +1,4 @@
-# VeltoPHP 2.0 | Lighweight HMVC PHP Framework
+# The lightweight PHP framework | VeltoPHP 2.0 | Lightweight HMVC PHP Framework
 
 <p align="center">
   <img src="https://res.cloudinary.com/drbowe2hn/image/upload/v1750857194/VeltoPHP2_la6xfv.png" alt="VeltoPHP Logo" width="320" />
