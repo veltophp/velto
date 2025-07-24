@@ -2,8 +2,8 @@
 
 use Velto\Core\Route\Route;
 use Velto\Core\Middleware\Auth;
-use Modules\Axion\AxionController;
-use Modules\Axion\CrudController;
+use Modules\Axion\Controllers\AxionController;
+use Modules\Axion\Controllers\CrudController;
 
 
 Route::group(['middleware' => [Auth::class]], function () {

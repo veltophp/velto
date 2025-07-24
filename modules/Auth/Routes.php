@@ -1,7 +1,7 @@
 <?php
 
 use Velto\Core\Route\Route;
-use Modules\Auth\AuthController;
+use Modules\Auth\Controllers\AuthController;
 use Velto\Core\Middleware\Auth;
 use Velto\Core\Middleware\Guest;
 

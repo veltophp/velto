@@ -1,3 +1,9 @@
+# VeltoPHP .htaccess Configuration
+#
+# Security and routing configuration for VeltoPHP
+# Created by Ketut Dana <dev@veltophp.com>
+# Version 2.0
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
@@ -19,4 +25,7 @@
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set X-XSS-Protection "1; mode=block"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>

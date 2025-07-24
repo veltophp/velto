@@ -4,7 +4,7 @@ Thumbs.db
 .Trashes
 
 # Environment
-# .env
+.env
 
 # Logs & cache
 storage/log/

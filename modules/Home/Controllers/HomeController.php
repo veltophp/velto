@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Home;
+namespace Modules\Home\Controllers;
 
 use Velto\Core\Controller\Controller;
 use Velto\Core\Request\Request;

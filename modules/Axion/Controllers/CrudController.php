@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Axion;
+namespace Modules\Axion\Controllers;
 
 use Velto\Core\Controller\Controller;
 use Velto\Core\Request\Request;

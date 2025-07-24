@@ -1,4 +1,0 @@
-<?= deleteAlert() ?>
-<?= successAlert() ?>
-<?= errorAlert() ?>
-<?= loadingIndicator() ?>

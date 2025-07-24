@@ -20,11 +20,26 @@
     
         <!-- Tailwind -->
         <script src="https://cdn.tailwindcss.com"></script>
+        
+        {{-- CSS Style  --}}
+        <link rel="stylesheet" href="/assets/css/style.css">
     </head>
-    
+
     <body>
+        {{-- navbar component --}}
         @component('app-navbar')
+
+        {{-- content  --}}
         @yield('app-content')
+
+        {{-- footer --}}
         @component('app-footer')
+
+        {{-- flash alerts --}}
+        @component('alerts')
+
+        {{-- Java script --}}
+        <script type="module" src="/assets/js/script.js"></script>
     </body>
+
 </html>
