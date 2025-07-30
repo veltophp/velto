@@ -108,7 +108,7 @@ class AxionController extends Controller
             return to_route('login');
         }
         
-        if (Hash::check($request->current_password, $user->password)) {
+        if (!Hash::check($request->current_password, $user->password)) {
             flash()->to('#form-change-password')->error('Incorrect current password.');
             return to_route('axion.profile');
         }
