@@ -1,76 +1,92 @@
 @extends('layouts.app')
 
 @section('title')
-    Welcome to VeltoPHP V2.0
+VeltoPHP 2.0 | Lightweight HMVC PHP Framework
 @endsection
 
 @section('app-content')
-<div class="min-h-screen font-thin mb-24">
-    <div class="pt-32 pb-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <div class="text-center font-light text-sm text-gray-700 dark:text-gray-300 py-6 px-4">
-                    <span class="italic">Bug report, contribution, or donation</span> — email us at 
-                    <a href="mailto:dev@veltophp.com" class="underline text-red-600 dark:text-red-400 hover:text-red-500">dev@veltophp.com</a>
-                </div> 
-                <h1 class="text-5xl md:text-6xl font-thin text-gray-900 mb-4">
-                    Welcome to 
-                    <span class="relative text-red-500 ml-2 inline-block">
-                        VeltoPHP
-                        <span class="absolute -top-2 -right-4 text-sm text-red-500 font-light">V2</span>
-                    </span>
-                </h1>                
-                <p class="text-gray-600 font-light mb-12 max-w-4xl mx-auto">
-                    {{$message}}
-                </p>                                
-            </div>
-        </div>
-    </div>
+<div class="flex flex-col justify-between items-center min-h-screen">
+    <main class="py-10 max-w-7xl mx-auto px-4 md:px-2 mt-24">
+        <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
+            {{-- Documentation Card --}}
+            <a href="https://veltophp.com/docs" class="gradient-border flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6  border  transition duration-300 hover:text-black hover:border-red-400 focus:outline-none focus-visible:ring-red-600 md:row-span-3 lg:p-10 lg:pb-10">
+                <div class="relative hidden md:flex w-full flex-1 items-stretch">
+                    <img src="https://res.cloudinary.com/drbowe2hn/image/upload/v1753779176/VELTO-CODING_el3kyh.png" alt="VeltoPHP repository preview"
+                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-cover object-top" />
+                </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-thin text-gray-900 mb-4">Built for Modern Development</h2>
-            <p class="text-gray-600 font-light">Everything you need to build amazing applications</p>
+                <div class="relative flex items-center gap-6 lg:items-end">
+                    <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
+                        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-red-100">
+                            <i class="fas fa-book text-red-500 text-xl"></i>
+                        </div>
+
+                        <div class="pt-3 sm:pt-5 lg:pt-0">
+                            <h2 class="text-xl font-semibold text-black">Documentation</h2>
+                            <p class="mt-4 /relaxed">
+                                Everything you need to know about VeltoPHP: installation, routing, HMVC modules,
+                                migrations, and more. Jump in and start shipping faster!
+                            </p>
+                        </div>
+                    </div>
+
+                    <i class="fas fa-arrow-right text-red-500 text-lg"></i>
+                </div>
+            </a>
+            {{-- Quick Start Card --}}
+            <div class="flex items-start gap-4 rounded-lg bg-white p-6  border  transition duration-300 hover:text-black hover:border-red-400 focus:outline-none focus-visible:ring-red-600 lg:pb-10">
+                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-red-100">
+                    <i class="fas fa-rocket text-red-500 text-xl"></i>
+                </div>
+
+                <div class="pt-3">
+                    <h2 class="text-xl font-semibold text-black">Great things start from small beginnings.</h2>
+                    <p class="mt-4 /relaxed">
+                        VeltoPHP's lightweight core and CLI scaffolding let you move from idea to prototype in
+                        minutes.
+                    </p>
+
+                    <div class="mt-4">
+                        <span class="/relaxed">Install with Composer:</span>
+                        <p class=" leading-relaxed rounded-md py-3 px-4 mt-2 bg-[#272822] text-[#F8F8F2] font-mono shadow-inner">
+                            <code class="text-green-400 font-medium">composer create-project veltophp/velto my-velto</code>
+                        </p>
+                    </div>                        
+                </div>
+            </div>
+            {{-- Contact Card --}}
+            <a href="mailto:dev@veltophp.com"
+                class="gradient-border flex items-start gap-4 rounded-lg bg-white p-6  border  transition duration-300 hover:text-black hover:border-red-400 focus:outline-none focus-visible:ring-red-600 lg:pb-10">
+                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-red-100">
+                    <i class="fas fa-envelope text-red-500 text-xl"></i>
+                </div>
+
+                <div class="pt-3">
+                    <h2 class="text-xl font-semibold text-black">Connect and contribute with us.</h2>
+                    <p class="mt-4 /relaxed">
+                        Have questions, bug reports, or want to contribute? Drop us an email—we'd love to hear
+                        from you!
+                    </p>
+                </div>
+                <i class="fas fa-arrow-right text-red-500 text-lg self-center"></i>
+            </a>
+            {{-- Community Card --}}
+            <a href="https://veltophp.com/community"
+                class="gradient-border flex items-start gap-4 rounded-lg bg-white p-6  border  transition duration-300 hover:text-black hover:border-red-400 focus:outline-none focus-visible:ring-red-600 lg:pb-10">
+                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-red-100">
+                    <i class="fas fa-users text-red-500 text-xl"></i>
+                </div>
+
+                <div class="pt-3">
+                    <h2 class="text-xl font-semibold text-black">Join Our Community Forum.</h2>
+                    <p class="mt-4 /relaxed">
+                        Connect with other VeltoPHP developers, share ideas, ask questions, and help build the ecosystem together.
+                    </p>
+                </div>
+                <i class="fas fa-arrow-right text-red-500 text-lg self-center"></i>
+            </a>
+
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="group">
-                <div class="bg-white/60 backdrop-blur-sm rounded-2xl border border-red-100 p-8 hover:border-red-200 transition-all">
-                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-200 transition-colors">
-                        <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-light text-gray-900 mb-3">Light and Efficient</h3>
-                    <p class="text-gray-600 font-light">VeltoPHP keeps things simple, so your apps stay fast and responsive.</p>
-                </div>
-            </div>
-        
-            <div class="group">
-                <div class="bg-white/60 backdrop-blur-sm rounded-2xl border border-red-100 p-8 hover:border-red-200 transition-all">
-                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-200 transition-colors">
-                        <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-light text-gray-900 mb-3">Clean Structure</h3>
-                    <p class="text-gray-600 font-light">Organized using a simple HMVC pattern that’s easy to learn and maintain.</p>
-                </div>
-            </div>
-        
-            <div class="group">
-                <div class="bg-white/60 backdrop-blur-sm rounded-2xl border border-red-100 p-8 hover:border-red-200 transition-all">
-                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-200 transition-colors">
-                        <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-light text-gray-900 mb-3">Secure by Default</h3>
-                    <p class="text-gray-600 font-light">Basic security features are already included to help you build safely.</p>
-                </div>
-            </div>
-        </div>
-        
-    </div>
+    </main>
 </div>
 @endsection

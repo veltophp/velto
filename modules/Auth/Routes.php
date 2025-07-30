@@ -2,6 +2,8 @@
 
 use Velto\Core\Route\Route;
 use Modules\Auth\Controllers\AuthController;
+use Modules\Auth\Controllers\SocialController;
+
 use Velto\Core\Middleware\Auth;
 use Velto\Core\Middleware\Guest;
 
@@ -27,10 +29,18 @@ Route::group(['middleware' => [Guest::class]], function () {
     Route::get('/reset-password/{token}/{email}', [AuthController::class, 'resetPasswordForm'])->name('reset.password');
     Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('submit.reset.password');
 
+
+    Route::get('/auth/login/{driver}', [SocialController::class, 'socialRedirect'])->name('social.login');
+    Route::get('/auth/{driver}/callback', [SocialController::class, 'socialCallback'])->name('social.callback');
+
+
 });
 
 Route::group(['middleware' => [Auth::class]], function () {
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::get('/auth/update/password', [SocialController::class, 'updatePasswordForm'])->name('update.password.form');
+    Route::post('/auth/update/password', [SocialController::class, 'updatePasswordProcess'])->name('update.password.process');
 
 });

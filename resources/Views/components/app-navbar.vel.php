@@ -1,28 +1,28 @@
 <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b border-red-100 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 md:px-0">
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex items-center space-x-3">
                 <a href="{{ route('home') }}" class="flex items-center space-x-2">
-                    <i class="fas fa-code text-red-600 text-2xl"></i>
+                    <i class="text-red-600 text-2xl"></i>
                     <img src="https://res.cloudinary.com/drbowe2hn/image/upload/v1750857194/VeltoPHP2_la6xfv.png"
                          alt="VeltoPHP Logo"
                          class="h-8 w-8 object-contain" />
-                    <span class="text-xl font-thin text-gray-900">Velto<span class="text-red-500">PHP</span></span>
+                    <span class="text-xl font-medium text-gray-900">Velto<span class="text-red-500">PHP</span></span>
                 </a>
             </div>
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#" class="text-gray-600 hover:text-red-500 transition-colors font-light">Documentation</a>
-                <a href="#" class="text-gray-600 hover:text-red-500 transition-colors font-light">Community</a>
+                <a href="{{route('docs')}}" class="@active('/docs', 'border-red-500') border-b-2 text-gray-600 hover:text-red-500 transition-colors font-medium">Docs</a>
+                <a href="{{route('community')}}" class="@active('/community', 'border-red-500') border-b-2 text-gray-600 hover:text-red-500 transition-colors font-medium">Community</a>
                 @if (env('AUTH_LOGIN'))
                     @if(Auth::user())
-                        <a href="{{ route('axion.dashboard') }}" class="text-gray-600 hover:text-red-500 transition-colors font-light">
+                        <a href="{{ route('axion.dashboard') }}" class="text-gray-600 hover:text-red-500 transition-colors font-medium">
                             Dashboard
                         </a>
                     @else
-                        <a href="{{ route('axion.dashboard') }}" class="text-gray-600 hover:text-red-500 transition-colors font-light">
+                        <a href="{{ route('login') }}" class="text-gray-600 hover:text-red-500 transition-colors font-medium">
                             Login
                         </a>
                     @endif
@@ -43,16 +43,16 @@
 
     <!-- Mobile Menu -->
     <div id="nav-menu" class="md:hidden hidden px-4 pb-4">
-        <a href="#" class="block py-2 text-gray-600 hover:text-red-500 font-light">Documentation</a>
-        <a href="#" class="block py-2 text-gray-600 hover:text-red-500 font-light">Community</a>
+        <a href="{{route('docs')}}" class="block py-2 text-gray-600 hover:text-red-500 font-medium">Docs</a>
+        <a href="{{route('community')}}" class="block py-2 text-gray-600 hover:text-red-500 font-medium">Community</a>
         @if (env('AUTH_LOGIN'))
             <div class="border-t border-red-500 pt-2 mt-2">
                 @if(Auth::user())
-                    <a href="{{ route('axion.dashboard') }}" class="block py-2 text-gray-600 hover:text-red-500 font-light">
+                    <a href="{{ route('axion.dashboard') }}" class="block py-2 text-gray-600 hover:text-red-500 font-medium">
                         Dashboard
                     </a>
                 @else
-                    <a href="{{ route('axion.dashboard') }}" class="block py-2 text-gray-600 hover:text-red-500 font-light">
+                    <a href="{{ route('axion.dashboard') }}" class="block py-2 text-gray-600 hover:text-red-500 font-medium">
                         Login
                     </a>
                 @endif

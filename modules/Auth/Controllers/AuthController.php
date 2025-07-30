@@ -7,6 +7,8 @@ use Velto\Core\Request\Request;
 use Velto\Core\Session\Session;
 use Velto\Core\Env\Env;
 use Velto\Core\Mail\Mail;
+use Velto\Core\Support\Hash;
+
 
 use Modules\Auth\Models\User;
 class AuthController extends Controller
@@ -17,7 +19,7 @@ class AuthController extends Controller
             return to_route('home');
         }    
 
-        return view('Auth.login');
+        return view('auth.login');
     }
 
     public function register()
@@ -26,7 +28,7 @@ class AuthController extends Controller
             return to_route('home');
         } 
         
-        return view('Auth.register');
+        return view('auth.register');
     }
 
     public function submitLogin(Request $request)
@@ -43,7 +45,7 @@ class AuthController extends Controller
     
         $user = User::findBy('email', $request->email);
     
-        if (!isset($user->password) || !hash_check($request->password, $user->password)) {
+        if (!isset($user->password) || !Hash::check($request->password, $user->password)) {
             flash()->to('#form-login')->error('Wrong email or password!');
             return to_route('login');
         }
@@ -81,11 +83,38 @@ class AuthController extends Controller
             return to_route('register');
         }
 
+        $name = $request->name;
+        $nameLower = strtolower($name);
+        
+        $forbiddenNames = ['velto', 'veltophp', 'admin', 'official', 'developer', 'moderator'];
+
+        foreach ($forbiddenNames as $forbidden) {
+            if (strpos($nameLower, $forbidden) !== false) {
+                flash()->to('#form-register')->error('The name is not available. Please use your real name.');
+                return to_route('register');
+            }
+        }
+
+        $regexPatterns = [
+            '/^velto/i',                 
+            '/^admin/i',                 
+            '/(official|support)/i',     
+            '/velto\s?team/i',           
+            '/^dev(eloper)?$/i',         
+        ];
+
+        foreach ($regexPatterns as $pattern) {
+            if (preg_match($pattern, $name)) {
+                flash()->to('#form-register')->error('The name is not available. Please use your real name.');
+                return to_route('register');
+            }
+        }
+
         User::create([
-            'user_id' => uvid(8),
             'name' => $request->name,
+            'username' => generateUsername($request->name),
             'email' => $request->email,
-            'password' => bcrypt($request->password),
+            'password' => Hash::make($request->password),
             'email_verified' => is_email_verification_enabled() ? false : true,
         ]);
 
@@ -130,7 +159,7 @@ class AuthController extends Controller
             return to_route('login');
         }
 
-        return view('Auth.verify-email')->with('email' , $email);
+        return view('auth.verify-email')->with('email' , $email);
 
     }
 
@@ -189,7 +218,7 @@ class AuthController extends Controller
 
     public function forgotPasswordForm()
     {
-        return view('Auth.forgot-password');
+        return view('auth.forgot-password');
     }
 
     public function submitForgotPassword(Request $request)
@@ -240,7 +269,7 @@ class AuthController extends Controller
             return to_route('forgot.password');
         }
 
-        return view('Auth.reset-password', [
+        return view('auth.reset-password', [
             'token' => $token,
             'email' => $decodedEmail,
         ]);
@@ -279,7 +308,7 @@ class AuthController extends Controller
             return to_route('forgot.password');
         }
         
-        User::where('email', $email)->update('password', bcrypt($password ));
+        User::where('email', $email)->update('password', Hash::make($password ));
 
         Session::remove("reset_password_tokens.{$decodedEmail}");
     

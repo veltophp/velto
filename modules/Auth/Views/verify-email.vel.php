@@ -10,9 +10,6 @@
     <!-- Left Side - Branding -->
     <div class="md:w-1/2 bg-red-500 md:flex items-center justify-center hidden p-12">
         <div class="max-w-md text-center text-white">
-            <div class="flex justify-center mb-8">
-                <i class="fas fa-code text-white text-6xl"></i>
-            </div>
             <h1 class="text-4xl font-bold mb-4">Hi👋, I'm Axion!</h1>
             <p class="text-xl opacity-90">Streamline your development workflow with VeltoPHP's powerful dashboard</p>
         </div>
@@ -25,7 +22,6 @@
             <!-- Branding -->
             <div class="text-center">
                 <a href="{{ route('home') }}">
-                    <i class="fas fa-code text-red-600 text-3xl"></i>
                     <span class="text-3xl font-semibold text-gray-800 dark:text-white">
                         Axion<span class="text-red-600">Dashboard</span>
                     </span>

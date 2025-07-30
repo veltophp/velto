@@ -5,6 +5,8 @@ namespace Modules\Axion\Controllers;
 use Velto\Core\Controller\Controller;
 use Velto\Core\Request\Request;
 use Velto\Core\Session\Session;
+use Velto\Core\Support\Hash;
+
 
 use Modules\Auth\Models\User;
 use Modules\Auth\Models\Auth;
@@ -15,20 +17,20 @@ class AxionController extends Controller
 {
     public function axionDashboard()
     {
-        return view('Axion.axion-dashboard')->with('message', 'Welcome to Axion Dashboard.');
+        return view('axion.axion-dashboard')->with('message', 'Welcome to Axion Dashboard.');
     }
 
     public function examplePage()
     {
         $message = 'Hello, this is Example page!';
         
-        return view('Axion.axion-example-page')->compact($message);
+        return view('axion.axion-example-page')->compact($message);
 
     }
 
     public function axionProfile()
     {
-        return view('Axion.axion-profile');
+        return view('axion.axion-profile');
     }
 
     public function updateName(Request $request)
@@ -114,7 +116,7 @@ class AxionController extends Controller
             return to_route('login');
         }
         
-        if (!hash_check($request->current_password, $user->password)) {
+        if (Hash::check($request->current_password, $user->password)) {
             flash()->to('#form-change-password')->error('Incorrect current password.');
             return to_route('axion.profile');
         }
@@ -140,7 +142,7 @@ class AxionController extends Controller
 
         $dataCount = Axion::where('user', $user)->count();
          
-        return view('Axion.crud-basic.crud')->compact($datas , $dataCount);
+        return view('axion.crud-basic.crud')->compact($datas , $dataCount);
 
     }
 
@@ -184,7 +186,7 @@ class AxionController extends Controller
 
         $data = Axion::where('id', $id)->andWhere('user', $user)->first();
 
-        return view('Axion.axion-example-page-view')->with('data', $data);
+        return view('axion.axion-example-page-view')->with('data', $data);
 
     }
 

@@ -10,9 +10,6 @@
     <!-- Left Side (Intro Section) -->
     <div class="md:w-1/2 bg-red-500 md:flex items-center justify-center hidden p-12">
         <div class="max-w-md text-center text-white">
-            <div class="flex justify-center mb-8">
-                <i class="fas fa-code text-6xl"></i>
-            </div>
             <h1 class="text-4xl font-bold mb-4">Hi👋, I'm Axion!</h1>
             <p class="text-xl opacity-90">
                 Streamline your development workflow with VeltoPHP's powerful dashboard
@@ -27,7 +24,6 @@
             <!-- Logo & Branding -->
             <div class="text-center">
                 <a href="{{ route('home') }}">
-                    <i class="fas fa-code text-red-600 text-3xl"></i>
                     <span class="text-3xl font-semibold text-gray-800 dark:text-white">
                         Axion<span class="text-red-600">Dashboard</span>
                     </span>
@@ -89,6 +85,36 @@
                     </button>
                 </div>
             </form>
+            <div class="my-6 text-center text-gray-800">
+                Or login via social account.
+            </div>
+            <div class="flex justify-center gap-8 px-4 pb-4">
+                {{-- Google --}}
+                <a href="{{ route('social.login', ['driver' => 'google']) }}"
+                   class="w-12 h-12 flex items-center justify-center rounded-md border border-gray-300 bg-white hover:bg-gray-100">
+                    <img src="https://www.svgrepo.com/show/452216/google.svg" alt="Google" class="w-8 h-8">
+                </a>
+            
+                {{-- GitHub --}}
+                <a href="{{ route('social.login', ['driver' => 'github']) }}"
+                   class="w-12 h-12 flex items-center justify-center rounded-md border border-gray-300 bg-white hover:bg-gray-100">
+                    <img src="https://www.svgrepo.com/show/217753/github.svg" alt="GitHub" class="w-8 h-8">
+                </a>
+            
+                {{-- Discord --}}
+                <a href="{{ route('social.login', ['driver' => 'discord']) }}"
+                   class="w-12 h-12 flex items-center justify-center rounded-md border border-gray-300 bg-white hover:bg-gray-100">
+                    <img src="https://www.svgrepo.com/show/353655/discord-icon.svg" alt="Discord" class="w-8 h-8">
+                </a>
+
+                {{-- Facebook  --}}
+                <a href="{{ route('social.login', ['driver' => 'facebook']) }}"
+                    class="w-12 h-12 flex items-center justify-center rounded-md border border-gray-300 bg-white hover:bg-gray-100">
+                     <img src="https://www.svgrepo.com/show/452196/facebook-1.svg" alt="Facebook" class="w-8 h-8">
+                 </a>
+            </div>
+            
+            
             @if (env('AUTH_REGISTER'))
                 <!-- Register Link -->
                 <div class="mt-8 text-center">
