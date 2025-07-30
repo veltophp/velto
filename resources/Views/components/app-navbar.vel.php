@@ -14,8 +14,8 @@
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#" class="@active('/docs', 'border-red-500') border-b-2 text-gray-600 hover:text-red-500 transition-colors font-medium">Docs</a>
-                <a href="#" class="@active('/community', 'border-red-500') border-b-2 text-gray-600 hover:text-red-500 transition-colors font-medium">Community</a>
+                {{-- <a href="#" class="@active('/docs', 'border-red-500') border-b-2 text-gray-600 hover:text-red-500 transition-colors font-medium">Docs</a>
+                <a href="#" class="@active('/community', 'border-red-500') border-b-2 text-gray-600 hover:text-red-500 transition-colors font-medium">Community</a> --}}
                 @if (env('AUTH_LOGIN'))
                     @if(Auth::user())
                         <a href="{{ route('axion.dashboard') }}" class="text-gray-600 hover:text-red-500 transition-colors font-medium">
@@ -43,8 +43,8 @@
 
     <!-- Mobile Menu -->
     <div id="nav-menu" class="md:hidden hidden px-4 pb-4">
-        <a href="#" class="block py-2 text-gray-600 hover:text-red-500 font-medium">Docs</a>
-        <a href="#" class="block py-2 text-gray-600 hover:text-red-500 font-medium">Community</a>
+        {{-- <a href="#" class="block py-2 text-gray-600 hover:text-red-500 font-medium">Docs</a>
+        <a href="#" class="block py-2 text-gray-600 hover:text-red-500 font-medium">Community</a> --}}
         @if (env('AUTH_LOGIN'))
             <div class="border-t border-red-500 pt-2 mt-2">
                 @if(Auth::user())

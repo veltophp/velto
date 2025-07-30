@@ -20,14 +20,6 @@ class AxionController extends Controller
         return view('axion.axion-dashboard')->with('message', 'Welcome to Axion Dashboard.');
     }
 
-    public function examplePage()
-    {
-        $message = 'Hello, this is Example page!';
-        
-        return view('axion.axion-example-page')->compact($message);
-
-    }
-
     public function axionProfile()
     {
         return view('axion.axion-profile');
@@ -132,81 +124,6 @@ class AxionController extends Controller
         return to_route('axion.profile');
 
     }
-
-    public function crud()
-    {
-
-        $user = Auth::user()->name;
-
-        $datas = Axion::where('user', $user)->get();
-
-        $dataCount = Axion::where('user', $user)->count();
-         
-        return view('axion.crud-basic.crud')->compact($datas , $dataCount);
-
-    }
-
-    public function crudStore(Request $request)
-    {
-        $user = Auth::user()->name;
-
-        $errors = validate($request->all(), [
-            'name'        => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'image'       => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-
-        if(!empty($errors)) {
-            return to_route_response('axion.example.page')->errorAlert($errors);
-        }
-
-        if (hasFile($request, 'image')) {
-            $file = $request->file('image');
-            $imageName = imageName($file);
-            $imageSave = imageSave($imageName)->from($file)->to('assets/gambar');
-        }
-
-        $data =[
-            'name' => $request->name,
-            'description' => $request->description,
-            'image' => $imageSave,
-            'user'  => $user,
-        ];
-
-        $data = Axion::create($data);
-
-        return to_route_response('axion.crud')->successAlert('Data uploaded successfully!');
-
-    }
-
-    public function crudView($id)
-    {
-
-        $user = Auth::user()->name;
-
-        $data = Axion::where('id', $id)->andWhere('user', $user)->first();
-
-        return view('axion.axion-example-page-view')->with('data', $data);
-
-    }
-
-    public function crudDelete($id)
-    {
-        $user = Auth::user()->name;
-        
-        $data = Axion::where('id',$id)->andWhere('user', $user)->delete();
-
-        if($data){
-
-            return to_route_response('axion.example.page')
-            ->successAlert('Data deleted successfully!');
-        }
-
-        return to_route_response('axion.example.page')
-        ->errorAlert('Error! Failed to delete Data');
-
-    }
-
 
 }
 

@@ -15,22 +15,6 @@
                        class="@active('/axion', 'border-red-500') inline-flex items-center px-1 pt-1 border-b-2 text-gray-700 hover:text-red-600 hover:border-red-400">
                         Dashboard
                     </a>
-
-                    @role('admin')
-                    <a href="{{ route('veltoadmin') }}"
-                       class="@active('/velto/admin', 'border-red-500') inline-flex items-center px-1 pt-1 border-b-2 text-gray-700 hover:text-red-600 hover:border-red-400">
-                        Admin
-                    </a>
-                    @end_role
-
-                    <a href="{{ route('axion.thread') }}"
-                       class="@active('/axion/thread', 'border-red-500') inline-flex items-center px-1 pt-1 border-b-2 text-gray-700 hover:text-red-600 hover:border-red-400">
-                        Threads
-                    </a>
-                    <a href="{{ route('axion.activity') }}"
-                       class="@active('/axion/activity', 'border-red-500') inline-flex items-center px-1 pt-1 border-b-2 text-gray-700 hover:text-red-600 hover:border-red-400">
-                        Activity
-                    </a>
                 </div>
             </div>
 
@@ -58,17 +42,7 @@
     <div id="nav-menu-sm" class="sm:hidden hidden px-4 pb-4">
         <a href="{{ route('axion.dashboard') }}"
            class="block py-2 text-gray-700 hover:text-red-600 font-light">Dashboard</a>
-           
-        @role('admin')
-        <a href="{{ route('veltoadmin') }}"
-           class="block py-2 text-gray-700 hover:text-red-600 font-light">Admin</a>
-        @end_role
 
-        <a href="{{ route('axion.thread') }}"
-           class="block py-2 text-gray-700 hover:text-red-600 font-light">Threads</a>
-
-        <a href="{{ route('axion.activity') }}"
-           class="block py-2 text-gray-700 hover:text-red-600 font-light">Activity</a>
         {{-- Border Top for separation --}}
         <div class="border-t border-red-500 pt-2 mt-2">
             <a href="{{ route('axion.profile') }}"

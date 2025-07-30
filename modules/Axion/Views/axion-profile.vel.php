@@ -41,7 +41,7 @@
                 <div>
                     <label for="name" class="block text-sm text-gray-700">Your Name</label>
                     <input type="text" name="name" id="name" value="{{ Auth::user()->name }}"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-red-500 focus:border-red-500 font-thin"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-red-500 focus:border-red-500  "
                         placeholder="Enter your name">
                 </div>
 
@@ -49,7 +49,7 @@
                 <div>
                     <label class="block text-sm text-gray-700">Email Address</label>
                     <input type="email" value="{{ Auth::user()->email }}" disabled
-                        class="mt-1 block w-full bg-gray-100 border border-gray-300 rounded-md shadow-sm px-3 py-2 font-thin text-gray-500 cursor-not-allowed">
+                        class="mt-1 block w-full bg-gray-100 border border-gray-300 rounded-md shadow-sm px-3 py-2   text-gray-500 cursor-not-allowed">
                 </div>
 
                 <div>
@@ -80,21 +80,21 @@
                 <div>
                     <label for="current_password" class="block text-sm text-gray-700">Current Password</label>
                     <input type="password" name="current_password" id="current_password"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-red-500 focus:border-red-500 font-thin"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-red-500 focus:border-red-500  "
                         placeholder="Enter current password">
                 </div>
 
                 <div>
                     <label for="new_password" class="block text-sm text-gray-700">New Password</label>
                     <input type="password" name="new_password" id="new_password"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-red-500 focus:border-red-500 font-thin"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-red-500 focus:border-red-500  "
                         placeholder="Enter new password">
                 </div>
 
                 <div>
                     <label for="new_password_confirmation" class="block text-sm text-gray-700">Confirm New Password</label>
                     <input type="password" name="new_password_confirmation" id="new_password_confirmation"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-red-500 focus:border-red-500 font-thin"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-red-500 focus:border-red-500  "
                         placeholder="Confirm new password">
                 </div>
 
@@ -124,7 +124,7 @@
                 <div>
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-red-500 focus:border-red-500 font-thin"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-red-500 focus:border-red-500  "
                         placeholder="Enter your password">
                 </div>
 
